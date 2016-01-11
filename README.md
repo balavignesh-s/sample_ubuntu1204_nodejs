@@ -7,7 +7,7 @@ This sample helps you create a shippable.yml file for your Node.js project on Sh
 
 ### Build Image
 
-The sample uses a php specific build image that's available for public use:
+The sample uses a Node.js specific build image that's available for public use:
 [shippableimages/ubuntu1204_nodejs](https://registry.hub.docker.com/u/shippableimages/ubuntu1204_nodejs)  ([Dockerfile](https://github.com/shippableImages/ubuntu1204_nodejs/blob/master/Dockerfile)).
 
 To set your build image in Shippable:
