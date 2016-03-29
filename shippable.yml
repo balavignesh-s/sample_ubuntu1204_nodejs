@@ -7,7 +7,10 @@ node_js:
 
 # The path for Xunit to output test reports
 env:
+ global:
   - XUNIT_FILE=shippable/testresults/result.xml
+  - secure: oD1TnRpatMYjPz0cTRtH+4+JRb9kgpKL0aoyPR2MRxpO3VcVFKO4n3GP5fQBcZv24RJmkzeAAjfpp2m47Ki2kw5gO6a08xgfMrs1Fb+XQMZbvXfs7O4EmqC0wo9sCOGCu9UvZ4XPUHvY7+0paaKWA2Yxrz6DMDGpJgdt2ax5uORtRK+dPVEigZG1bC+SCiufLjISXVqd/RhNd5OgNwCZGgKWwvu8e/xK55DyFwFts5z+xSCulm794OSGcz9iRRGdU4Hb7rWzOvXyGkcYf+EdPwPs37Y5DNguav9FpXZO0OgYzV2ENJF/hLZfBxJV2VpVT7XuolBklbA06rjYlKPv8g==
+  - secure: J+P872lpJkbyVhu9u2IsqXvUostb2edoNzdGsAOulKz/gC8vb3Rzu2U1RVrBVxPbU0KtiaI6x2E2M4bcmE//RpiolC1vsTtTl+HHTxucZlLA7nOAd6zmnmrwXMCGA1aoNPXBOXH/8SNhvvKCYOKDQKj+7cQwmydAXz8t1LySg80DAZghwDVrJPGkUeo0YaLLVTZ7z2I9Z30H+I5bAK1TxaEy2fZBa1ALS9Lue606e8XrwV8wiQbbsJxhRP8//P+f5JrsdxGJDEtPysx56uJhPog5VGWyngXbu1St3kpL+bwZEUIm/KtGZithmynwHryvyoAjD2NhHQIWXB+roGRBEg==  
   
 build:
  
@@ -23,3 +26,6 @@ build:
   - grunt
   - ./node_modules/.bin/istanbul cover grunt -- -u tdd
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+  
+ on_success:
+    - aws s3 sync $SHIPPABLE_BUILD_DIR "s3://vidya-ebs-ui" --region "us-east-1"
