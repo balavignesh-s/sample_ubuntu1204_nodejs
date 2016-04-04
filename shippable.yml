@@ -29,4 +29,4 @@ build:
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
   
  on_success:
-    - aws s3 sync $SHIPPABLE_BUILD_DIR "s3://vidya-ebs-ui" --region "us-east-1"
+ #   - aws s3 sync $SHIPPABLE_BUILD_DIR "s3://vidya-ebs-ui" --region "us-east-1"
