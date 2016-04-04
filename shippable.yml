@@ -13,7 +13,7 @@ env:
   - secure: J+P872lpJkbyVhu9u2IsqXvUostb2edoNzdGsAOulKz/gC8vb3Rzu2U1RVrBVxPbU0KtiaI6x2E2M4bcmE//RpiolC1vsTtTl+HHTxucZlLA7nOAd6zmnmrwXMCGA1aoNPXBOXH/8SNhvvKCYOKDQKj+7cQwmydAXz8t1LySg80DAZghwDVrJPGkUeo0YaLLVTZ7z2I9Z30H+I5bAK1TxaEy2fZBa1ALS9Lue606e8XrwV8wiQbbsJxhRP8//P+f5JrsdxGJDEtPysx56uJhPog5VGWyngXbu1St3kpL+bwZEUIm/KtGZithmynwHryvyoAjD2NhHQIWXB+roGRBEg==  
   
 build:
- 
+ cache: true
  pre_ci_boot:
    # image_name: shippableimages/ubuntu1204_nodejs
     image_name: shippable/minv2
